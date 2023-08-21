@@ -1,7 +1,7 @@
 # torch-metacon
 Pytorch Implmentation of Debiased Graph Poisoning Attack via Contrastive Surrogate Objective
 
-We refer to the <ins>DeepRobust<\ins> library to build our implementation. [https://github.com/DSE-MSU/DeepRobust](https://github.com/DSE-MSU/DeepRobust).
+We refer to the <ins>DeepRobust</ins> library to build our implementation. [https://github.com/DSE-MSU/DeepRobust](https://github.com/DSE-MSU/DeepRobust).
 
 ## Dataset
 We use four datasets: Cora, Cora ML, Citeseer, and Polblogs in Datasets of DeepRobust library.
