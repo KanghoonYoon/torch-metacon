@@ -20,14 +20,5 @@ bash shell/test_metacon.sh
 
 
 
-<!-- To run the experiment of MetaAttack and GraD, 
 
-* Train and Test of Meta-gradeint-based Attacks
-``` python  
-
-bash shell/test_meta.sh
-
-bash shell/test_grad.sh
-
-```   -->
 
