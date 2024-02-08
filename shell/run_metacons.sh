@@ -4,7 +4,7 @@ seeds="0 1 2 3 4"
 
 ## Change Here
 gpu=0
-dataset='polblogs' 
+dataset='cora' 
 
 
 if [ $dataset == 'cora' ]; then
@@ -13,7 +13,7 @@ if [ $dataset == 'cora' ]; then
     momentum=0.9
     droprate2=0.3
     coef2=0.4
-    model="metacon"
+    model="metacon_s"
     use_grad=True
 
 elif [ $dataset == 'citeseer' ]; then
@@ -22,6 +22,7 @@ elif [ $dataset == 'citeseer' ]; then
     momentum=0.9
     droprate2=0.2
     coef2=0.6
+    model="metacon_s"
     use_grad=False
     
 elif [ $dataset == 'polblogs' ]; then
@@ -30,6 +31,7 @@ elif [ $dataset == 'polblogs' ]; then
     momentum=0.9
     droprate2=0.1
     coef2=0.1
+    model="metacon_s"
     use_grad=True
 
 elif [ $dataset == 'cora_ml' ]; then
@@ -38,6 +40,7 @@ elif [ $dataset == 'cora_ml' ]; then
     momentum=0.9
     droprate2=0.1
     coef2=0.1
+    model="metacon_s"
     use_grad=True
 fi
 

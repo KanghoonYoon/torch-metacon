@@ -191,7 +191,7 @@ class BaseMeta(BaseAttack):
 
 
 
-class Metacon(BaseMeta):
+class Metacon_S(BaseMeta):
     """Meta attack. Adversarial Attacks on Graph Neural Networks
     via Meta Learning, ICLR 2019.
 
@@ -224,7 +224,7 @@ class Metacon(BaseMeta):
     droprate1=0.5, droprate2=0.5, coef1=1.0, coef2=0.01,
     train_iters=100, lr=0.1, momentum=0.9, analysis_mode=False):
 
-        super(Metacon, self).__init__(model, nnodes, feature_shape, lambda_, attack_structure, attack_features, undirected, device)
+        super(Metacon_S, self).__init__(model, nnodes, feature_shape, lambda_, attack_structure, attack_features, undirected, device)
 
         self.momentum = momentum
         self.lr = lr
@@ -554,7 +554,7 @@ class Metacon(BaseMeta):
 
 
 
-class MetaconPlus(BaseMeta):
+class MetaconGraD_S(BaseMeta):
     """Meta attack. Adversarial Attacks on Graph Neural Networks
     via Meta Learning, ICLR 2019.
 
@@ -587,7 +587,7 @@ class MetaconPlus(BaseMeta):
     droprate1=0.5, droprate2=0.5, coef1=1.0, coef2=0.01,
     train_iters=100, lr=0.1, momentum=0.9, analysis_mode=False):
 
-        super(MetaconPlus, self).__init__(model, nnodes, feature_shape, lambda_, attack_structure, attack_features, undirected, device)
+        super(MetaconGraD_S, self).__init__(model, nnodes, feature_shape, lambda_, attack_structure, attack_features, undirected, device)
 
         self.momentum = momentum
         self.lr = lr

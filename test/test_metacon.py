@@ -6,7 +6,7 @@ import numpy as np
 import torch.nn.functional as F
 import torch.optim as optim
 from src.graph.defense import GCN
-from src.graph.global_attack import Metacon, MetaconPlus
+from src.graph.global_attack import Metacon_S, MetaconGraD_S
 from src.graph.utils import *
 from src.graph.data import Dataset
 import argparse
@@ -76,6 +76,7 @@ parser.add_argument('--momentum', type=float, default=0.9,
                     help='Initial learning rate.')
 parser.add_argument('--weight_decay', type=float, default=5e-4,
                     help='Weight decay (L2 loss on parameters).')
+parser.add_argument('--use_grad', type=bool, default=False, help='Use GraD attack loss')
 
 ## ContraMettack Parameters                    
 parser.add_argument('--droprate1', type=float, default=0.,
@@ -128,15 +129,15 @@ surrogate.fit(features, adj, labels, idx_train, train_iters=1000)
 lambda_ = 0
 
 # Setup Attack Model
-if (args.model == 'metacon'):
-    model = Metacon(model=surrogate, 
+if (args.model == 'metacon_s') & (~args.use_grad):
+    model = Metacon_S(model=surrogate, 
     nnodes=adj.shape[0], feature_shape=features.shape, 
     attack_structure=True, attack_features=False, device=device, lambda_=lambda_, analysis_mode=args.analysis_mode, 
     train_iters=args.inner_train_iters, lr=args.lr, momentum=args.momentum,
     droprate1=args.droprate1, droprate2=args.droprate2, coef1=args.coef1, coef2=args.coef2)
 
-if (args.model == 'metacon+'):
-    model = MetaconPlus(model=surrogate, 
+if (args.model == 'metacon_s') & (args.use_grad):
+    model = MetaconGraD_S(model=surrogate, 
     nnodes=adj.shape[0], feature_shape=features.shape, 
     attack_structure=True, attack_features=False, device=device, lambda_=lambda_, analysis_mode=args.analysis_mode, 
     train_iters=args.inner_train_iters, lr=args.lr, momentum=args.momentum,
