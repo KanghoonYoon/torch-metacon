@@ -17,12 +17,13 @@ mkdir datasets
 
 ## Implementation  
 
-You can conduct the experiment of **Metacon** by running the file in **shell/** directory.
+You can conduct the experiment of **Metacon_S** and **Metacon_D** by running the file in **shell/** directory.
 
 * Train / Test of Metacon
 ``` python  
 
-bash shell/test_metacon.sh  
+bash shell/test_metacons.sh  
+bash shell/test_metacond.sh  
 
 ```  
 
