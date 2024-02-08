@@ -2,37 +2,49 @@
 savegraph=True
 seeds="0 1 2 3 4"
 
-model="metacon"
+model="metacond"
 
 ## Change Here
-gpu=0
-dataset='polblogs' 
+gpu=2
+dataset='citeseer' 
 
 
 if [ $dataset == 'cora' ]; then
     inner_train_iters=100
     lr=0.01
     momentum=0.9
-    droprate2=0.3
-    coef2=0.4
+    droprate2=0.2
+    coef2=1.0
+    vic_coef1=1.0
+    vic_coef2=2.0
+    vic_coef2=2.0
 elif [ $dataset == 'citeseer' ]; then
     inner_train_iters=100
     lr=0.01
     momentum=0.9
     droprate2=0.2
-    coef2=0.6
+    coef2=1.0
+    vic_coef1=1.0
+    vic_coef2=1.0
+    vic_coef2=1.0
 elif [ $dataset == 'polblogs' ]; then
     inner_train_iters=500
     lr=0.01
     momentum=0.9
-    droprate2=0.1
-    coef2=0.1
+    droprate2=0.2
+    coef2=0.5
+    vic_coef1=1.0
+    vic_coef2=1.0
+    vic_coef2=2.0
 elif [ $dataset == 'cora_ml' ]; then
     inner_train_iters=60
     lr=0.1
     momentum=0.9
-    droprate2=0.1
-    coef2=0.1
+    droprate2=0.2
+    coef2=0.5
+    vic_coef1=1.0
+    vic_coef2=2.0
+    vic_coef2=4.0
 fi
 
 
