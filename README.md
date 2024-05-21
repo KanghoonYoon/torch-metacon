@@ -30,9 +30,9 @@ bash shell/test_metacond.sh
 
 ## Derivation and Proofs
 
-[Derivation](./assets/derivation_eq3.png)
+![Derivation](./assets/derivation_eq3.png)
 
-[Proof of theorems](./assets/proof.png)
+![Proof of theorems](./assets/proof.png)
 
 
 
